@@ -218,64 +218,13 @@ Present suggestions and ask the user which to include in the outline.
 
 **Exit plan mode** using `ExitPlanMode`.
 
-Write the final outline as a Markdown file using `Write`:
+Read `references/output-template.md` and use it as the structure for the final outline file:
 - **Filename**: `ideate-[topic-slug].md` in the current working directory
-- **Format**: Use the output template below
 
-Report to the user: file path, section count, and next steps (e.g., "You can use this outline to draft the full design doc").
+Report to the user: file path, section count, and next steps (e.g., "You can use this outline to draft the full design doc with `/design-doc`").
 
----
-
-## Output Template
-
-```markdown
-# Ideate: [Topic Title]
-
-**Date:** [date] | **Status:** Outline
-
-## Overview
-[1-2 paragraph summary of the idea and scope as refined through brainstorming]
-
----
-
-## Section 1: [Title]
-**Depth:** Brief / Moderate / Detailed
-
-### Key Thoughts
-- [Organized finding or thought]
-- [Finding with source reference]
-
-### Open Questions
-- [Unresolved question]
-
-### Suggested Visualization
-> [Type]: [Description of what the diagram should show]
-
----
-
-## Section 2: [Title]
-...
-
----
-
-## Abandoned / Deferred Topics
-- [Topic]: [Reason for deferring]
-
-## Sources & References
-
-### Internal Documents
-- [Doc title](Glean/wiki URL) — used in Section N — [brief relevance note]
-
-### Codebase
-- [`path/to/file.py`](Sourcegraph URL) — used in Section M — [what's relevant]
-- [`path/to/other.py`](Sourcegraph URL) — used in Section K — [what's relevant]
-
-### External Resources
-- [Article/doc title](URL) — used in Section N — [brief relevance note]
-
-## Visualization Plan
-| Section | Type | Description |
-|---|---|---|
-| [Section name] | System Diagram | [What it shows] |
-| [Section name] | Sequence Diagram | [What it shows] |
-```
+<!-- Future extensibility notes:
+  - New research sources (MCP tools, internal APIs) → extract Step 2b to references/research-sources.md
+  - New output formats (JSON, YAML, direct pipeline integration) → add templates in references/
+  - Per-context synthesis format variants → extract to references/synthesis-formats.md
+-->
